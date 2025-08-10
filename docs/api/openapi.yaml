@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: Assistant Copro API
+  version: 0.1.0
+servers:
+  - url: https://assistant.10millionsdecoproprietaires.org/api
+paths:
+  /health:
+    get:
+      summary: Vérifie l'état de l'API
+      responses:
+        '200': { description: OK }
+  /auth/verify:
+    post:
+      summary: Vérifie un JWT WordPress et retourne les droits calculés (stub Lot 1)
+      responses:
+        '200': { description: OK }
+        '401': { description: JWT invalide }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
